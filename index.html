@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alien Language Translator</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        font-family: "Arial", sans-serif;
+        color: white;
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .input-field {
+        width: 80%;
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        outline: none;
+      }
+
+      .button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        background-color: #ff5722;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #e64a19;
+      }
+
+      .message {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Alien Language Translator</h1>
+      <input
+        class="input-field"
+        id="textInput"
+        type="text"
+        placeholder="Type alien language here..."
+      />
+      <button class="button" onclick="handleSubmit()">Submit</button>
+      <div id="message" class="message">I love you</div>
+    </div>
+
+    <script>
+      function handleSubmit() {
+        const inputField = document.getElementById("textInput");
+        const message = document.getElementById("message");
+
+        if (
+          inputField.value.includes("π") ||
+          inputField.value.includes("@") ||
+          inputField.value.includes("∆")
+        ) {
+          message.style.opacity = 1;
+        } else {
+          message.style.opacity = 0;
+        }
+      }
+    </script>
+  </body>
+</html>
